@@ -1,8 +1,14 @@
-var mymodule = require("./mymodule.js");
+var fs = require('fs');
+var p = require('path');
 
-console.log("Hello world");
-console.log(process.argv[1] + "\n");
+var path = process.argv[2];
+var ext = process.argv[3];
 
-mymodule.printName();
-mymodule.printGreeting();
-console.log(mymodule);
+fs.readdir(path, function(err, list) {
+	if (err) throw err; 
+	for (var i = 0; i < list.length; i++) {
+		if (p.extname(list[i]) == ('.'+ ext)) {
+            console.log(list[i]);			
+		}
+	}
+});

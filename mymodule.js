@@ -1,5 +1,7 @@
 //by default, var exports = module.exports = {}
 
+console.log('Hi');
+
 exports.printName = function() {
 	console.log("Hi, this is Hieu");
 };
